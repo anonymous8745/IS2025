@@ -267,40 +267,39 @@ href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.cs
       
       <div align="justify">
          
-      <!-- Baselines -->
-      <h2>Baseline Models</h2>
-      <h3>EmoGen</h3>
+      <h2>Segmentation-Variant Codebooks</h2>
         
-        EmoGen uses four pre-extracted embeddings to represent emotions within the four quadrants. It encodes discrete values of these quadrants (e.g., 1 or 2) into embeddings as the emotion input, thus samples within a particular quadrant share the same emotional conditions (i.e., the emotion embeddings for all samples in each quadrant are identical, regardless of their original labels). As a result, while the generated music exhibits precise emotions, <b>we argue that it lacks variation, leading to a situation where all samples with the same emotion tend to sound emotionally similar</b>.
+         We encode speech into continuous representations using HuBERT-large. Our method operates as follows: first, speech inputs are encoded into frame-wise continuous representations via HuBERT.
+         These representations are then pooled across segmentation boundaries (frames, phones, words, and utterances) derived from forced alignment applied to paired speech-text data.
+         For phone-, word-, and utterance-level segments, mean pooling is applied to aggregate frame-wise representations within each segment, while frame-level representations remain unpooled.
+         Each pooled or unpooled representation (corresponding to a segmentation level) is quantized using a dedicated Segmentation-Variant Codebook.
+         To construct these codebooks, we train separate K-means models (initialized with K-means++) on the representations for each segmentation level: the frame-level codebook is trained on raw frame-wise HuBERT outputs, while phone-, word-, and utterance-level codebooks are trained on their respective pooled representations.
+         During inference, quantization is performed by assigning each representation (pooled or unpooled) to the nearest cluster centroid in its corresponding codebook using Euclidean distance. This results in four parallel DSU output streams, each capturing linguistic structure at a distinct granularity (frame, phone, word, utterance).
 
-      <h3>MidiEmo</h3>
+      <h2>Processing Multiple Streams of DSUs</h2>
         
-        MidiEmo encodes continuous VA labels (e.g., [0.8, 0.8]) as latent embeddings using linear layers, which are then concatenated with music embeddings. <b>We argue that this approach can make music samples with boundary labels more susceptible to subjective bias (as the boundary emotions are usually difficult to distinguish).</b> The challenge of assigning boundary labels with high confidence often leads to ambiguity in the generated emotion. Consequently, while there is considerable variation, ambiguity is prevalent in the generated music, making it difficult to perceive precise emotions.
-
-
-      <!-- Method -->
-      <h2>Our Proposed Model</h2>
-
-      Our proposed model enhances emotion conditioning by combining the strengths of EmoGen and MIDIEmo, enabling a balance and trade-off between <b>prominence</b> and <b>variation</b> in the generated emotion.
+         For downstream tasks, there are potentially many ways that Segmentation-Variant DSU output streams could be processed.
+         We choose to mean pool all DSUs across matching segmentations previously use to pool the continuous representations.
+         For example, all frame DSUs that fall within the same utterance segment are averaged with the utterance DSU, all frame DSUs that fall within the same word segment are averaged with the same word DSU, and the same with the phones.
+         Therefore, the resulting sequence is the same length as the frame-level stream of DSUs. However, we recognize that future work may want to explore other processing methods of the multiple streams of DSUs. The full method overview can be seen in Figure 1.
 
       <figure>
-        <p style="text-align:center"><img src="fig/Segmentation-Variant-Codebooks.pdf" alt="model" width=700px/></p>
-        <figcaption style="text-align:center">Fig 1. Segmentation-Variant Codebooks processing overview. $h_n$ refers to continuous hidden representations at the $n$th frame, $S_n$ refers to the resulting frame-level stream obtained from mean pooling multiple streams of DSUs based on segmentation.</figcaption>
+        <p style="text-align:center"><img src="fig/Segmentation-Variant-Codebooks.png" alt="model" width=700px/></p>
+        <figcaption style="text-align:center">Figure 1. Segmentation-Variant Codebooks processing overview. $h_n$ refers to continuous hidden representations at the $n$th frame, $S_n$ refers to the resulting frame-level stream obtained from mean pooling multiple streams of DSUs based on segmentation.</figcaption>
       </figure>
 
+         
+        <h2>Resynthesized Audio Samples</h2>
+         <h3>Baselines</h3>
+         1. Ground Truth
+         2. Continuous Features
+         3. Discrete Features k=500
+         4. Discrete Features k=2000
 
-      <!-- Music samples -->
-
-        <h2>Music Samples</h2>
-
-        The emotion conditions for <b>EmoGen</b> are discrete scores, i.e., [1, 2, 3, 4], denoting Russell's four quadrants. Therefore, VA values do not apply.<br>
-        The emotion conditions for <b>MidiEmo</b> and <b>our proposed model</b> are VA scores ranging from -1.0 to 1.0.<br>
-        <b>low VA</b> denotes both valence and arousal scores assigned from [-0.1, +0.1, -0.2, +0.2, -0.3, +0.3].<br>
-        <b>mid VA</b> denotes both valence and arousal scores assigned from [-0.4, +0.4, -0.5, +0.5, -0.6, +0.6, -0.7, +0.7].<br>
-        <b>high VA</b> denotes both valence and arousal scores assigned from [-0.8, +0.8, -0.9, +0.9, -1.0, +1.0].<br><br>
-        For example, low VA: [+0.1, +0.2]; mid VA: [+0.4, -0.4]; high VA: [-0.8, +0.9].<br><br>
-        <b>Boundary labels usually come from low VA and high VA, making their emotions sound like those of other quadrants. For example, music of emotions in Q3 sound like emotions in Q4. </b> <br><br>
-
+         <h3>Our proposed approach</h3>
+         Segmentation-Variant Codebooks k=500
+         
+         
             <table align="center">
                 <tr>
                     <td style="text-align:center"><b>Q1</b></td>
