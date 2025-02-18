@@ -291,140 +291,160 @@ href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.cs
          
         <h2>Resynthesized Audio Samples</h2>         
          
-            <table align="center">
-                <tr>
-                    <td style="text-align:center"><b>Segmentation Variant Codebooks k=500</b></td>
-                    <td style="text-align:center">Ground Truth</td>
-                    <td style="text-align:center">Continuous Features</td>
-                    <td style="text-align:center">Discrete Features k=500</td>
-                    <td style="text-align:center">Discrete Features k=2000</td>
-                </tr>
-                <tr>
-                    <td>
-                        <audio controls>
-                        <source src="audio/ground-truth/ex01_happy_00362_pred.wav">
-                        </audio>
-                    </td>
-                </td>
-                <tr>
-                    <td>
-                        <audio controls>
-                        <source src="audio/ground-truth/ex01_happy_00363_pred.wav">
-                        </audio>
-                    </td>
-                </td>
-                <tr>
-                    <td>
-                        <audio controls>
-                        <source src="audio/ground-truth/ex02_confused_00376_pred.wav">
-                        </audio>
-                    </td>
-                </td>
-                <tr>
-                    <td>
-                        <audio controls>
-                        <source src="audio/ground-truth/ex02_confused_00377_pred.wav">
-                        </audio>
-                    </td>
-                </td>
-                <tr>
-                    <td>
-                        <audio controls>
-                        <source src="audio/ground-truth/ex02_default_emphasis_00181_pred.wav">
-                        </audio>
-                    </td>
-                </td>
-                <tr>
-                    <td>
-                        <audio controls>
-                        <source src="audio/ground-truth/ex02_enunciated_00370_pred.wav">
-                        </audio>
-                    </td>
-                </td>
-                <tr>
-                    <td>
-                        <audio controls>
-                        <source src="audio/ground-truth/ex03-ex01_angry_006-ex01_angry_css000_pred.wav">
-                        </audio>
-                    </td>
-                </td>
-                <tr>
-                    <td>
-                        <audio controls>
-                        <source src="audio/ground-truth/ex03-ex01_angry_006-ex03_angry_css000_pred.wav">
-                        </audio>
-                    </td>
-                </td>
-                <tr>
-                    <td>
-                        <audio controls>
-                        <source src="audio/ground-truth/ex03-ex01_sarcastic_002-ex01_sarcastic_css000_pred.wav">
-                        </audio>
-                    </td>
-                </td>
-                <tr>
-                    <td>
-                        <audio controls>
-                        <source src="audio/ground-truth/ex03-ex01_sarcastic_002-ex01_sarcastic_css001_pred.wav">
-                        </audio>
-                    </td>
-                </td>
-                <tr>
-                    <td>
-                        <audio controls>
-                        <source src="audio/ground-truth/ex03_default_emphasis_00182_pred">
-                        </audio>
-                    </td>
-                </td>
-                <tr>
-                    <td>
-                        <audio controls>
-                        <source src="audio/ground-truth/ex03_laughing_00365_pred">
-                        </audio>
-                    </td>
-                </td>
-                <tr>
-                    <td>
-                        <audio controls>
-                        <source src="audio/ground-truth/ex03_laughing_00366_pred">
-                        </audio>
-                    </td>
-                </td>
-                <tr>
-                    <td>
-                        <audio controls>
-                        <source src="audio/ground-truth/ex04-ex03_fast_002-ex03_fast_css000_pred.wav">
-                        </audio>
-                    </td>
-                </td>
-                <tr>
-                    <td>
-                        <audio controls>
-                        <source src="audio/ground-truth/ex04_sad_00364_pred.wav">
-                        </audio>
-                    </td>
-                </td>
-                <tr>
-                    <td>
-                        <audio controls>
-                        <source src="audio/ground-truth/ex04_sad_00365_pred.wav">
-                        </audio>
-                    </td>
-                </td>
-                <tr>
-                    <td>
-                        <audio controls>
-                        <source src="audio/ground-truth/ex04_whisper_00371_pred.wav">
-                        </audio>
-                    </td>
-                </td>
-                <tr>
-                    <td>
-                        <audio controls>
-                        <source src="audio/ground-truth/ex04_whisper_00372_pred.wav">
-                        </audio>
-                    </td>
-                </td>
+    <table align="center">
+        <tr>
+            <td style="text-align:center"><b>Sample ID</b></td>
+            <td style="text-align:center">Ground Truth</td>
+            <td style="text-align:center">Continuous Features</td>
+            <td style="text-align:center">Discrete Features k=500</td>
+            <td style="text-align:center">Discrete Features k=2000</td>
+            <td style="text-align:center"><b>Segmentation Variant Codebooks k=500</b></td>
+        </tr>
+        <tr>
+            <td>ex01_happy_00362</td>
+            <td><audio controls><source src="audio/ground-truth/ex01_happy_00362_gt.wav"></audio></td>
+            <td><audio controls><source src="audio/continuous/ex01_happy_00362_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame500/ex01_happy_00362_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame2000/ex01_happy_00362_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/segmentation-variant/ex01_happy_00362_pred.wav"></audio></td>
+        </tr>
+        <tr>
+            <td>ex01_happy_00363</td>
+            <td><audio controls><source src="audio/ground-truth/ex01_happy_00363_gt.wav"></audio></td>
+            <td><audio controls><source src="audio/continuous/ex01_happy_00363_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame500/ex01_happy_00363_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame2000/ex01_happy_00363_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/segmentation-variant/ex01_happy_00363_pred.wav"></audio></td>
+        </tr>
+        <tr>
+            <td>ex02_confused_00376</td>
+            <td><audio controls><source src="audio/ground-truth/ex02_confused_00376_gt.wav"></audio></td>
+            <td><audio controls><source src="audio/continuous/ex02_confused_00376_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame500/ex02_confused_00376_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame2000/ex02_confused_00376_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/segmentation-variant/ex02_confused_00376_pred.wav"></audio></td>
+        </tr>
+        <tr>
+            <td>ex02_confused_00377</td>
+            <td><audio controls><source src="audio/ground-truth/ex02_confused_00377_gt.wav"></audio></td>
+            <td><audio controls><source src="audio/continuous/ex02_confused_00377_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame500/ex02_confused_00377_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame2000/ex02_confused_00377_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/segmentation-variant/ex02_confused_00377_pred.wav"></audio></td>
+        </tr>
+        <tr>
+            <td>ex02_default_emphasis_00181</td>
+            <td><audio controls><source src="audio/ground-truth/ex02_default_emphasis_00181_gt.wav"></audio></td>
+            <td><audio controls><source src="audio/continuous/ex02_default_emphasis_00181_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame500/ex02_default_emphasis_00181_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame2000/ex02_default_emphasis_00181_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/segmentation-variant/ex02_default_emphasis_00181_pred.wav"></audio></td>
+        </tr>
+        <tr>
+            <td>ex02_enunciated_00370</td>
+            <td><audio controls><source src="audio/ground-truth/ex02_enunciated_00370_gt.wav"></audio></td>
+            <td><audio controls><source src="audio/continuous/ex02_enunciated_00370_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame500/ex02_enunciated_00370_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame2000/ex02_enunciated_00370_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/segmentation-variant/ex02_enunciated_00370_pred.wav"></audio></td>
+        </tr>
+        <tr>
+            <td>ex03-ex01_angry_006-ex01_angry_css000</td>
+            <td><audio controls><source src="audio/ground-truth/ex03-ex01_angry_006-ex01_angry_css000_gt.wav"></audio></td>
+            <td><audio controls><source src="audio/continuous/ex03-ex01_angry_006-ex01_angry_css000_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame500/ex03-ex01_angry_006-ex01_angry_css000_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame2000/ex03-ex01_angry_006-ex01_angry_css000_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/segmentation-variant/ex03-ex01_angry_006-ex01_angry_css000_pred.wav"></audio></td>
+        </tr>
+        <tr>
+            <td>ex03-ex01_angry_006-ex03_angry_css000</td>
+            <td><audio controls><source src="audio/ground-truth/ex03-ex01_angry_006-ex03_angry_css000_gt.wav"></audio></td>
+            <td><audio controls><source src="audio/continuous/ex03-ex01_angry_006-ex03_angry_css000_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame500/ex03-ex01_angry_006-ex03_angry_css000_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame2000/ex03-ex01_angry_006-ex03_angry_css000_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/segmentation-variant/ex03-ex01_angry_006-ex03_angry_css000_pred.wav"></audio></td>
+        </tr>
+        <tr>
+            <td>ex03-ex01_sarcastic_002-ex01_sarcastic_css000</td>
+            <td><audio controls><source src="audio/ground-truth/ex03-ex01_sarcastic_002-ex01_sarcastic_css000_gt.wav"></audio></td>
+            <td><audio controls><source src="audio/continuous/ex03-ex01_sarcastic_002-ex01_sarcastic_css000_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame500/ex03-ex01_sarcastic_002-ex01_sarcastic_css000_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame2000/ex03-ex01_sarcastic_002-ex01_sarcastic_css000_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/segmentation-variant/ex03-ex01_sarcastic_002-ex01_sarcastic_css000_pred.wav"></audio></td>
+        </tr>
+        <tr>
+            <td>ex03-ex01_sarcastic_002-ex01_sarcastic_css001</td>
+            <td><audio controls><source src="audio/ground-truth/ex03-ex01_sarcastic_002-ex01_sarcastic_css001_gt.wav"></audio></td>
+            <td><audio controls><source src="audio/continuous/ex03-ex01_sarcastic_002-ex01_sarcastic_css001_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame500/ex03-ex01_sarcastic_002-ex01_sarcastic_css001_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame2000/ex03-ex01_sarcastic_002-ex01_sarcastic_css001_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/segmentation-variant/ex03-ex01_sarcastic_002-ex01_sarcastic_css001_pred.wav"></audio></td>
+        </tr>
+        <tr>
+            <td>ex03_default_emphasis_00182</td>
+            <td><audio controls><source src="audio/ground-truth/ex03_default_emphasis_00182_gt.wav"></audio></td>
+            <td><audio controls><source src="audio/continuous/ex03_default_emphasis_00182_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame500/ex03_default_emphasis_00182_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame2000/ex03_default_emphasis_00182_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/segmentation-variant/ex03_default_emphasis_00182_pred.wav"></audio></td>
+        </tr>
+        <tr>
+            <td>ex03_laughing_00365</td>
+            <td><audio controls><source src="audio/ground-truth/ex03_laughing_00365_gt.wav"></audio></td>
+            <td><audio controls><source src="audio/continuous/ex03_laughing_00365_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame500/ex03_laughing_00365_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame2000/ex03_laughing_00365_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/segmentation-variant/ex03_laughing_00365_pred.wav"></audio></td>
+        </tr>
+        <tr>
+            <td>ex03_laughing_00366</td>
+            <td><audio controls><source src="audio/ground-truth/ex03_laughing_00366_gt.wav"></audio></td>
+            <td><audio controls><source src="audio/continuous/ex03_laughing_00366_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame500/ex03_laughing_00366_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame2000/ex03_laughing_00366_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/segmentation-variant/ex03_laughing_00366_pred.wav"></audio></td>
+        </tr>
+        <tr>
+            <td>ex04-ex03_fast_002-ex03_fast_css000</td>
+            <td><audio controls><source src="audio/ground-truth/ex04-ex03_fast_002-ex03_fast_css000_gt.wav"></audio></td>
+            <td><audio controls><source src="audio/continuous/ex04-ex03_fast_002-ex03_fast_css000_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame500/ex04-ex03_fast_002-ex03_fast_css000_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame2000/ex04-ex03_fast_002-ex03_fast_css000_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/segmentation-variant/ex04-ex03_fast_002-ex03_fast_css000_pred.wav"></audio></td>
+        </tr>
+        <tr>
+            <td>ex04_sad_00364</td>
+            <td><audio controls><source src="audio/ground-truth/ex04_sad_00364_gt.wav"></audio></td>
+            <td><audio controls><source src="audio/continuous/ex04_sad_00364_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame500/ex04_sad_00364_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame2000/ex04_sad_00364_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/segmentation-variant/ex04_sad_00364_pred.wav"></audio></td>
+        </tr>
+        <tr>
+            <td>ex04_sad_00365</td>
+            <td><audio controls><source src="audio/ground-truth/ex04_sad_00365_gt.wav"></audio></td>
+            <td><audio controls><source src="audio/continuous/ex04_sad_00365_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame500/ex04_sad_00365_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame2000/ex04_sad_00365_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/segmentation-variant/ex04_sad_00365_pred.wav"></audio></td>
+        </tr>
+        <tr>
+            <td>ex04_whisper_00371</td>
+            <td><audio controls><source src="audio/ground-truth/ex04_whisper_00371_gt.wav"></audio></td>
+            <td><audio controls><source src="audio/continuous/ex04_whisper_00371_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame500/ex04_whisper_00371_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame2000/ex04_whisper_00371_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/segmentation-variant/ex04_whisper_00371_pred.wav"></audio></td>
+        </tr>
+        <tr>
+            <td>ex04_whisper_00372</td>
+            <td><audio controls><source src="audio/ground-truth/ex04_whisper_00372_gt.wav"></audio></td>
+            <td><audio controls><source src="audio/continuous/ex04_whisper_00372_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame500/ex04_whisper_00372_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/frame2000/ex04_whisper_00372_pred.wav"></audio></td>
+            <td><audio controls><source src="audio/segmentation-variant/ex04_whisper_00372_pred.wav"></audio></td>
+        </tr>
+    </table>
     </div>
 
 <style>
